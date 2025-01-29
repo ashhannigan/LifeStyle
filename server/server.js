@@ -4,20 +4,15 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json());
-app.use(express.static(path.resolve(__dirname, '../dist')));
- // Serve static files from 'build'
+app.use(express.static(path.resolve(__dirname, '../dist'))); // Serve from 'dist'
 
-// The crucial change: Handle all GET requests by serving index.html
-app.get('/*', (req, res) => {  // Match ALL get routes (*)
-  res.sendFile(path.join(__dirname, '../dist/client/index.html'), (err) => {
-    if (err) {
-      console.log(err);
-      res.status(500).send("An error occurred");
-    }
-  });
-});
-app.use('/*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../../dist/client/index.html'));
+app.get('/*', (req, res) => { // Only ONE catch-all route handler
+    res.sendFile(path.join(__dirname, '../dist/index.html'), (err) => { // Correct path
+        if (err) {
+            console.log(err);
+            res.status(500).send("An error occurred");
+        }
+    });
 });
 
 // Default middleware error handler (keep this for debugging)
