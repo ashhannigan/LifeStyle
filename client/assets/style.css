@@ -1,0 +1,32 @@
+h1{
+    font-style: italic;
+    display: block;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    color: #123C69;
+}
+
+#bell {
+    position: absolute; /* Take it out of the document flow */
+    top: 10px; 
+    right: 10px; 
+    width: 50px; 
+    height: auto; /* Maintain aspect ratio */
+}
+
+#bell img {
+    max-width: 100%;  /* Ensure image scales within the container */
+    height: auto;
+    display: block; /* Prevents default inline behavior */
+}
+
+.splash, .email, .password{
+    color: #AC3B61;
+    background-color: #edc7b7;
+    padding: 10px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

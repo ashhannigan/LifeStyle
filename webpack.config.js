@@ -29,6 +29,19 @@ module.exports = {
         include: path.resolve(__dirname, 'client/assets'),
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
+      { 
+        test: /\.(png|jpe?g|gif|svg)$/i, // Match image file extensions
+        use: [
+            {
+                loader: 'file-loader', 
+                options: {
+                    name: '[name].[ext]', 
+                    outputPath: 'images', // Output directory within 'dist' (optional)
+                    publicPath: 'images', // Public URL path (important for correct paths in HTML)
+                },
+            },
+        ],
+    },
     ],
   },
   plugins: [

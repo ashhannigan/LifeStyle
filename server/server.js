@@ -16,11 +16,9 @@ app.get('/*', (req, res) => {  // Match ALL get routes (*)
     }
   });
 });
-
-// 404 handler (optional, but good practice)
-// app.use('*', (req, res) => { // Remove or comment out this 404 handler. It interferes.
-//   res.status(404).send('Not Found');
-// });
+app.use('/*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../../dist/client/index.html'));
+});
 
 // Default middleware error handler (keep this for debugging)
 app.use((err, req, res, next) => {

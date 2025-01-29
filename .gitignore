@@ -8,7 +8,7 @@ node_modules
 npm-debug.log*
 
 /bundle
-/dist
+/dist/*
 server/credentials.json
-
+package-lock.json
 token.json
