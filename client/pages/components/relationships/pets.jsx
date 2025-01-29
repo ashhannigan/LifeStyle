@@ -1,6 +1,6 @@
 import React from "react";
 
-const pets = ["Kim ", "Ken ", "Kait ", "Alex "];
+const pets = ["Winter", "Duke"];
 
 function Pets() {
   return (
