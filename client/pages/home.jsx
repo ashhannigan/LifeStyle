@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Family from "./components/relationships/family.jsx";
 import Reminders from "./components/reminders.jsx";
 import Pets from "./components/relationships/pets.jsx";
+import HealthstyleChoice from "./components/lifestyle/healthlyLifestyle.jsx";
 
 function Home() {
   const user = {
@@ -24,7 +25,7 @@ function Home() {
 
   return (
     <>
-      <h1>Welcome to YOUR Lifestyle App, {user.fname}!</h1>
+      <h1>Welcome to YOUR Lifestyle App, {user.fname} {""} {user.lname}!</h1>
       <h3>
         <em>
           Please use this website for your own personal growth and journey.{" "}
@@ -35,19 +36,18 @@ function Home() {
 <Reminders/>
       <select value={selectedOption} onChange={handleChange}>
         {" "}
-        {/* Dropdown (select) */}
+        {/* Dropdown (select) options */}
+        <option value="">Select One</option>
         <option value="Healthy">Healthy Lifestyle</option>{" "}
         <option value="Relationships">Relationships</option>
       </select>
-
-      {/* Display the selected option (optional) */}
-      {selectedOption && <p>You selected: {selectedOption}</p>}
 
       {/* Conditionally render content based if healthy selected */}
       {selectedOption === "Healthy" && (
         <div>
           <h2>Healthy Lifestyle Section</h2>
           {/* Content for healthy lifestyle */}
+          <HealthstyleChoice />
         </div>
       )}
       {/* Conditionally render content based if relationships selected */}
