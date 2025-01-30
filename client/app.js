@@ -11,7 +11,10 @@ import Home from "./pages/home.jsx";
 function Splash() {
 const navigate = useNavigate();
  const handleChange = () => {
-  navigate("/LogIn")
+  console.log('navigate to login is console logged out')
+  // navigate("/LogIn")
+  navigate("/Home")
+
  }
   return (
     <>
